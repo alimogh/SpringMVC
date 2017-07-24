@@ -49,3 +49,17 @@ Add **DispatcherServlet** to *web.xml*:
 
 </beans>
 ```
+
+A **ViewResolver**, add it inside */WEB-INF/todo-servlet.xml* after the `<context:component-scan base-package="com.johnbryce" />` tag.
+
+```xml
+  <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+```
